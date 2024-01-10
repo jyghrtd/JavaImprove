@@ -1,12 +1,12 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require('express');
+const app = express();
+const port = 3000;
 
 const db = require("./DB/db");
 app.set("port", port);
 
-app.get('/', (req, res) => {
-    db.query('SELECT * from User', function(error, user) {
+app.get('/userlist', (req, res) => {
+    db.query('SELECT * from Users', function(error, user) {
         if(error) {
             console.log(error);
         }
